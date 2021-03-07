@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "ci:rss2sheets": "ts-node --project tsconfig.builder.json json-builder.ts",
+    "ci:rss2sheets": "ts-node --project tsconfig.builder.json ./src/json-builder.ts",
     "build": "run-s build:next",
     "build:next": "next build",
     "start": "next start"
@@ -13,7 +13,8 @@
     "dayjs": "^1.10.4",
     "next": "^10.0.8",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "zod": "^1.11.11"
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.7",
@@ -32,7 +33,7 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
     "rss-parser": "^3.12.0",
-    "sass": "^1.32.8",
+    "scss": "^0.2.4",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.5"
   }

@@ -1,10 +1,12 @@
-// fetch rss => update spreadsheets
+// fetch rss => update spreadsheets => generate .items.json
 require('dotenv').config();
 import dayjs from 'dayjs';
 import fs from 'fs-extra';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import Parser from 'rss-parser';
-import siteConfig from './site.config';
+import siteConfig from '../site.config';
+import { getHostFromURL } from './lib/helper';
+import { itemSchema } from './schema';
 
 type RssItem = {
   title: string;
@@ -12,14 +14,6 @@ type RssItem = {
   date: string;
   description: undefined | string;
 };
-// type SheetRow = {
-//   title: string;
-//   url: string;
-//   date: string;
-//   description: string;
-//   from_rss: 'true' | '1' | '';
-//   excluded: 'true' | '1' | '';
-// };
 
 const parser = new Parser();
 const sheetId = process.env.SHEET_ID;
@@ -28,6 +22,7 @@ const privateKey = process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/gm, '\n');
 const sheetHeaderValues = [
   'date',
   'title',
+  'action',
   'url',
   'description',
   'excluded',
@@ -35,10 +30,6 @@ const sheetHeaderValues = [
 ];
 
 (async function () {
-  await rss2sheet();
-})();
-
-async function rss2sheet() {
   // prepare to access spreadsheet
   if (
     typeof sheetId === 'undefined' ||
@@ -93,6 +84,7 @@ async function rss2sheet() {
       date: item.date,
       title: item.title,
       url: item.url,
+      action: `Posted on ${getHostFromURL(item.url)}`,
       description: item.description || '',
       from_rss: '1',
     };
@@ -100,17 +92,21 @@ async function rss2sheet() {
   sheet.addRows(newRows);
 
   const allRows = await sheet.getRows();
-  const jsonData = allRows.map((r) => {
-    return {
-      title: r.title,
-      url: r.url,
-      description: r.description,
-      excluded: r.excluded === '1' || r.excluded === 'true',
-    };
-  });
+  const jsonData = allRows
+    .map((r) =>
+      itemSchema.parse({
+        title: r.title,
+        url: r.url,
+        date: r.date,
+        action: r.action,
+        description: r.description,
+        excluded: r.excluded === '1' || r.excluded === 'true',
+      })
+    )
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   fs.writeJsonSync('.items.json', jsonData);
-}
+})();
 
 async function fetchFeedItems(url: string) {
   const feed = await parser.parseURL(url);
