@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "run-s build:posts build:next",
-    "build:posts": "ts-node --project tsconfig.builder.json ./src/builder/posts.ts",
+    "ci:rss2sheets": "ts-node --project tsconfig.builder.json json-builder.ts",
+    "build": "run-s build:next",
     "build:next": "next build",
     "start": "next start"
   },
@@ -16,16 +16,19 @@
     "react-dom": "17.0.1"
   },
   "devDependencies": {
-    "eslint": "^7.21.0",
     "@types/fs-extra": "^9.0.7",
+    "@types/google-spreadsheet": "^3.0.2",
     "@types/node": "^14.14.31",
     "@types/react-dom": "^17.0.1",
     "@typescript-eslint/eslint-plugin": "^4.15.2",
     "@typescript-eslint/parser": "^4.15.2",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.21.0",
     "eslint-config-prettier": "^8.0.0",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "fs-extra": "^9.1.0",
+    "google-spreadsheet": "^3.1.15",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
     "rss-parser": "^3.12.0",
