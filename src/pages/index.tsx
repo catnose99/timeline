@@ -1,18 +1,18 @@
 import jsonItems from '../../.items.json';
-import { TimelineItem } from '../components/TimelineItem';
+import { ContentWrapper } from '../components/ContentWrapper';
+import { HomeHero } from '../components/HomeHero';
+import { Timeline } from '../components/Timeline';
 import { itemsSchema } from '../schema';
 
 const IndexPage = () => {
   const items = itemsSchema.parse(jsonItems);
   return (
-    <>
-      <h1>Hello Next.js 👋</h1>
+    <ContentWrapper>
+      <HomeHero />
       <div>
-        {items.map((item, i) => (
-          <TimelineItem key={`item-${i}`} item={item} />
-        ))}
+        <Timeline items={items} />
       </div>
-    </>
+    </ContentWrapper>
   );
 };
 

@@ -1,0 +1,62 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  @include mq(sm) {
+    font-size: 15px;
+  }
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  color: var(--c-base-text);
+  background: var(--c-base-background);
+  word-break: break-word;
+  word-wrap: break-word;
+  font-family: system-ui, -apple-system, 'Segoe UI', Helvetica, Arial,
+    'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'BlinkMacSystemFont', sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+p,
+blockquote,
+dl,
+dd,
+dt,
+section {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.25s;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
