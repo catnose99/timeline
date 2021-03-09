@@ -103,6 +103,7 @@ const sheetHeaderValues = [
         excluded: r.excluded === '1' || r.excluded === 'true',
       })
     )
+    .filter((r) => !r.excluded)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   fs.writeJsonSync('.items.json', jsonData);
