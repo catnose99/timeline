@@ -3,7 +3,8 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import siteConfig from '../../site.config';
-import '../styles/global.scss';
+import { SiteFooter } from '../components/SiteFooter';
+import '../styles/global/index.scss';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -12,12 +13,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <link
           rel="icon shortcut"
           type="image/png"
-          href={`${siteConfig.siteRoot}/logo.png`}
+          href={`${siteConfig.siteRoot}/icon.png`}
         />
       </Head>
-      {/* <SiteHeader /> */}
       <Component {...pageProps} />
-      {/* <SiteFooter /> */}
+      <SiteFooter />
     </>
   );
 }
