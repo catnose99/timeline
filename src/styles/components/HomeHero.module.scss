@@ -8,7 +8,23 @@
 }
 
 .description {
-  margin-top: 1.6rem;
+  margin-top: 2.3rem;
   font-size: 1.1rem;
+  line-height: 1.8;
   color: var(--c-gray);
+  a {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--c-border);
+    transition: color 0.2s;
+    &:hover {
+      color: var(--c-base-text);
+    }
+  }
+  svg {
+    margin-left: 4px;
+  }
 }

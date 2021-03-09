@@ -2,18 +2,19 @@
   margin-bottom: 5rem;
 }
 .year {
-  position: sticky;
-  z-index: 1;
-  top: 6px;
   display: inline-flex;
-  font-weight: 700;
+  position: sticky;
+  top: 6px;
+  z-index: 1;
+  margin-left: -10px;
   padding: 0.3rem 1rem;
+  font-weight: 700;
   border-radius: 2.5em;
   background: var(--c-base-background-lighter);
 }
 .itemsContainer {
   margin: 1rem 0;
-  margin-left: 14px;
+  margin-left: 2px;
   padding: 1rem 0;
   border-left: solid 2px var(--c-border);
 }
@@ -21,20 +22,20 @@
   display: block;
   position: relative;
   padding-left: 20px;
-  transition: color 0.2s ease;
   &:not(:first-child) {
     margin-top: 1.7rem;
-  }
-  &:hover {
-    color: var(--c-primary);
   }
 }
 
 .itemTitle {
   margin-top: 0.3rem;
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   line-height: 1.4;
-  flex: 1;
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--c-border);
+  }
 }
 
 .itemDate {
