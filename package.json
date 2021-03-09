@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "ci:rss2sheets": "ts-node --project tsconfig.builder.json ./src/json-builder.ts",
     "build": "run-s build:next",
+    "build:contents": "ts-node --project tsconfig.builder.json ./src/json-builder.ts",
     "build:next": "next build",
     "start": "next start"
   },
