@@ -1,4 +1,6 @@
 export default {
+  title: "catnose's timeline",
+  description: 'personal website by catnose.',
   siteRoot:
     process.env.NODE_ENV === 'production'
       ? 'https://catnose99.com'

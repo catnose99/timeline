@@ -15,6 +15,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           type="image/png"
           href={`${siteConfig.siteRoot}/icon.png`}
         />
+        <meta property="og:image" content={`${siteConfig.siteRoot}/icon.png`} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
       </Head>
       <Component {...pageProps} />
       <SiteFooter />
