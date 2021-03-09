@@ -12,10 +12,7 @@ const TimelineItem: React.VFC<{ item: Item }> = ({ item }) => {
   return (
     <a href={item.url || '#'} className={styles.itemLink}>
       <div className={styles.itemIcon}></div>
-      <time className={styles.itemDate}>{formatDate(item.date)}</time>
-      <h2 className={styles.itemTitle}>{item.title}</h2>
-
-      <div className={styles.itemAction}>
+      <div className={styles.itemMeta}>
         {hostname && (
           <img
             src={getFaviconSrcFromHostname(hostname)}
@@ -24,8 +21,14 @@ const TimelineItem: React.VFC<{ item: Item }> = ({ item }) => {
             className={styles.itemFavicon}
           />
         )}
-        {!!item.action?.length && <span>{item.action}</span>}
+        <div>
+          {!!item.action?.length && (
+            <span className={styles.itemAction}>{item.action}</span>
+          )}
+          <time className={styles.itemDate}>{formatDate(item.date)}</time>
+        </div>
       </div>
+      <h2 className={styles.itemTitle}>{item.title}</h2>
     </a>
   );
 };

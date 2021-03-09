@@ -18,6 +18,18 @@
   padding: 1rem 0;
   border-left: solid 2px var(--c-border);
 }
+.itemIcon {
+  position: absolute;
+  display: inline-flex;
+  left: -6px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: solid 2px var(--c-border);
+  background: var(--c-base-background);
+}
+
 .itemLink {
   display: block;
   position: relative;
@@ -28,7 +40,7 @@
 }
 
 .itemTitle {
-  margin-top: 0.3rem;
+  margin-top: 0.5rem;
   font-size: 1.08rem;
   line-height: 1.4;
   &:hover {
@@ -38,30 +50,22 @@
   }
 }
 
-.itemDate {
-  font-size: 14px;
-  color: var(--c-gray);
-}
-.itemAction {
-  margin-top: 0.4rem;
+.itemMeta {
   display: flex;
   align-items: center;
   color: var(--c-gray);
-  font-size: 14px;
+  font-size: 0.9rem;
+  line-height: 1.2;
 }
 .itemFavicon {
-  margin-right: 6px;
+  margin-right: 7px;
   border-radius: 4px;
 }
 
-.itemIcon {
-  position: absolute;
-  display: inline-flex;
-  left: -6px;
-  top: 8px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: solid 2px var(--c-border);
-  background: var(--c-base-background);
+.itemDate {
+  &:before {
+    content: '/';
+    margin: 0 5px;
+    color: var(--c-border);
+  }
 }
