@@ -32,4 +32,4 @@ To keep the feed fresh, you need to rebuild the app periodically.
 
 ## Licence
 
-MIT
+MIT except for logo (`/public/icon.*`). Be sure to replace them when you fork this repo.
