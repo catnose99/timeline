@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "run-s build:next",
-    "build:contents": "ts-node --project tsconfig.builder.json ./src/json-builder.ts",
+    "build": "run-s build:items build:next",
+    "build:items": "ts-node --project tsconfig.builder.json ./src/json-builder.ts",
     "build:next": "next build",
     "start": "next start"
   },
