@@ -9,6 +9,6 @@ export default {
     'https://zenn.dev/catnose99/feed',
     'https://medium.com/feed/@catnose99',
     'https://note.com/catnose/rss',
-    'https://catnose99.com/rss.xml',
+    'https://catknows.vercel.app/rss.xml',
   ],
 };
