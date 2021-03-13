@@ -24,7 +24,6 @@
       "source": "/cloudinary-dynamic-ogp-image",
       "destination": "/blog/cloudinary-dynamic-ogp-image"
     },
-    { "source": "/", "destination": "/blog/" },
     { "source": "/nyache", "destination": "/blog/nyache" },
     { "source": "/example-design", "destination": "/blog/example-design" },
     {
