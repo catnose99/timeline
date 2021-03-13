@@ -22,9 +22,7 @@ body {
   background: var(--c-base-background);
   word-break: break-word;
   word-wrap: break-word;
-  font-family: system-ui, -apple-system, 'Segoe UI', Helvetica, Arial,
-    'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'BlinkMacSystemFont', sans-serif;
+  font-family: var(--font-family-base);
 }
 
 img {

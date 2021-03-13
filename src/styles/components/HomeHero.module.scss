@@ -5,6 +5,7 @@
   margin-top: 3.3rem;
   font-size: 2.7rem;
   line-height: 1.2;
+  font-family: var(--font-family-alphabet);
 }
 
 .description {
@@ -12,6 +13,7 @@
   font-size: 1.1rem;
   line-height: 1.8;
   color: var(--c-gray);
+  font-family: var(--font-family-alphabet);
   a {
     display: inline-flex;
     align-items: center;
