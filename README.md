@@ -20,7 +20,7 @@ The feed are regularly updated by fetching data from specified sources: RSS feed
   ```
   [Real world sheet example](https://docs.google.com/spreadsheets/d/1xMmgneTK_yTE6q8fg-18uLKubh2HHvuV2BKksnWk69s/edit?usp=sharing)
 
-#### Get sheet api keys
+#### Configure keys
 This is required to access a sheet systematically.
 
 1. On [GCP IAM console](https://console.cloud.google.com/iam-admin/iam), create a service account.
