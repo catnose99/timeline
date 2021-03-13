@@ -12,7 +12,6 @@ type RssItem = {
   title: string;
   url: string;
   date: string;
-  description: undefined | string;
 };
 
 const parser = new Parser();
@@ -85,7 +84,6 @@ const sheetHeaderValues = [
       title: item.title,
       url: item.url,
       action: `Posted on ${getHostFromURL(item.url)}`,
-      description: item.description || '',
       from_rss: '1',
     };
   });
@@ -116,7 +114,6 @@ async function fetchFeedItems(url: string) {
     .map(({ title, contentSnippet, link, isoDate }) => {
       return {
         title,
-        description: contentSnippet?.substring(0, 400),
         url: link,
         date: dayjs(isoDate).format('YYYY-MM-DD'),
       };
