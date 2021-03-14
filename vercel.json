@@ -1,6 +1,8 @@
 {
   "version": 2,
   "github": {
-    "enabled": false
+    "enabled": false,
+    "autoAlias": false,
+    "silent": true
   }
 }
