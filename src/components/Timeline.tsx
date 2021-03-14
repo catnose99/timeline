@@ -15,7 +15,11 @@ const TimelineItem: React.VFC<{ item: Item }> = ({ item }) => {
       <div className={styles.itemMeta}>
         {hostname && (
           <img
-            src={getFaviconSrcFromHostname(hostname)}
+            src={
+              hostname === 'zenn.dev'
+                ? '/zenn-favicon.png'
+                : getFaviconSrcFromHostname(hostname)
+            }
             width={14}
             height={14}
             className={styles.itemFavicon}
