@@ -1,5 +1,6 @@
 # 👏 Thanks: https://zenn.dev/nikaera/articles/vercel-github-actions
-name: redeploy on vercel
+name: deploy on vercel
+
 on:
   push:
     branches:
