@@ -8,7 +8,7 @@ export function getHostFromURL(url: string) {
 }
 
 export function getFaviconSrcFromHostname(hostname: string) {
-  return `https://www.google.com/s2/favicons?sz=64&domain=${hostname}`;
+  return `https://www.google.com/s2/favicons?sz=128&domain=${hostname}`;
 }
 
 export function formatDate(dateText: string, format = 'YYYY-MM-DD') {
