@@ -108,22 +108,27 @@ const sheetHeaderValues = [
 })();
 
 async function fetchFeedItems(url: string) {
-  const feed = await parser.parseURL(url);
-  if (!feed?.items?.length) return [];
-  return feed.items
-    .map(({ title, contentSnippet, link, isoDate }) => {
-      return {
-        title,
-        url: link,
-        date: dayjs(isoDate).format('YYYY-MM-DD'),
-      };
-    })
-    .filter(
-      (item): item is RssItem =>
-        typeof item.title === 'string' &&
-        typeof item.url === 'string' &&
-        typeof item.date === 'string'
-    );
+  try {
+    const feed = await parser.parseURL(url);
+    if (!feed?.items?.length) return [];
+    return feed.items
+      .map(({ title, contentSnippet, link, isoDate }) => {
+        return {
+          title,
+          url: link,
+          date: dayjs(isoDate).format('YYYY-MM-DD'),
+        };
+      })
+      .filter(
+        (item): item is RssItem =>
+          typeof item.title === 'string' &&
+          typeof item.url === 'string' &&
+          typeof item.date === 'string'
+      );
+  } catch (err) {
+    console.error(`🚩 Failed to fetch data from ${url}`);
+    return [];
+  }
 }
 
 async function getAllFeedItems() {
