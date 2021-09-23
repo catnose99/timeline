@@ -7,7 +7,7 @@ export default {
       : 'http://localhost:3000',
   rssUrlList: [
     'https://zenn.dev/catnose99/feed',
-    'https://medium.com/feed/@catnose99',
+    'https://catnose.medium.com/feed',
     'https://note.com/catnose/rss',
     'https://catknows.vercel.app/rss.xml',
   ],
