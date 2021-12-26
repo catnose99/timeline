@@ -4,5 +4,12 @@
     "enabled": false,
     "autoAlias": false,
     "silent": true
-  }
+  },
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://catnose.me/timeline",
+      "permanent": true
+    }
+  ]
 }
